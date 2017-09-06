@@ -1,0 +1,43 @@
+<resources>
+    <string name="app_name">MVPApplication</string>
+    <string name="login">登录</string>
+    <string name="username">用户名</string>
+    <string name="password">密码</string>
+    <string name="server_address">服务器地址：</string>
+    <string name="ws_address">WS 地址</string>
+    <string name="save">保存</string>
+    <string name="save_success">保存成功</string>
+    <string name="settings">设置</string>
+    <string name="clear">清空</string>
+    <string name="loading">加载中...</string>
+    <string name="logging_in">登录中...</string>
+    <string name="handling">处理中...</string>
+    <string name="loginSuccess">登录成功!</string>
+    <string name="loginfailed">登录失败!</string>
+    <string name="password_or_username_null">用户名或密码不能为空！</string>
+    <string name="remember_me">记住账号密码</string>
+    <string name="net_110">连接超时!</string>
+    <string name="net_202">已经接受请求，但处理尚未完成！</string>
+    <string name="net_400">请求出现语法错误！</string>
+    <string name="net_500">服务器内部错误！</string>
+    <string name="net_404">请求无法访问服务！</string>
+    <string name="tips">提示</string>
+    <string name="data_exception">数据异常！</string>
+
+    <string name="crash_confirm">发送错误报告</string>
+    <string name="crash_cancel">不，谢谢！</string>
+    <string name="crash_title">应用关闭提示</string>
+    <string name="crash_content">我们对应用关闭给您引起的不便致以诚挚的歉意.我们已经将错误报告发送给我们的开发者，我们将及时处理此问题！</string>
+    <string name="title_app_update">应用更新</string>
+    <string name="content_app_update">发现了一个新版本，您想要现在更新吗？</string>
+    <string name="update_now">马上更新</string>
+    <string name="update_later">稍后更新</string>
+    <string name="download_new_version">正在下载新版本...</string>
+    <string name="logout_tips">您确定要退出应用？</string>
+    <string name="confirm">确定</string>
+    <string name="cancel">取消</string>
+    <string name="yes">是</string>
+    <string name="no">否</string>
+
+    //*********************** 业务使用***************************
+</resources>

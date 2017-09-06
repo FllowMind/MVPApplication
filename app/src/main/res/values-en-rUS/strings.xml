@@ -1,0 +1,45 @@
+<resources>
+    <string name="app_name">MVP架构应用</string>
+
+
+    <string name="login">Login</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="server_address">Server Address</string>
+    <string name="ws_address">Ws Address</string>
+    <string name="save">Save</string>
+    <string name="save_success">Save Successful</string>
+    <string name="settings">Settings</string>
+    <string name="clear">Clear</string>
+    <string name="loading">Loding...</string>
+    <string name="logging_in">Logging in...</string>
+    <string name="handling">handling...</string>
+    <string name="loginSuccess">Login Success!</string>
+    <string name="loginfailed">Login Failed!</string>
+    <string name="password_or_username_null">Password or Username can not be empty!</string>
+    <string name="remember_me">Remember UserName and Password</string>
+    <string name="net_110">Connection Time Out!</string>
+    <string name="net_202">The request has been accepted, but the processing has not been completed！</string>
+    <string name="net_400">Request Syntax Error!</string>
+    <string name="net_500">Internal Server Error!</string>
+    <string name="net_404">Request cannot access service!</string>
+    <string name="tips">Tips</string>
+    <string name="data_exception">Data Exception!</string>
+
+    <string name="crash_confirm">Send Error Report</string>
+    <string name="crash_cancel">No,Thanks</string>
+    <string name="crash_title">APP Closed Tips</string>
+    <string name="crash_content">We are very sorry for the inconvenience caused by app\'s need to
+        close down.The error has been sent to our developers and we\'ll handle it in time!</string>
+    <string name="title_app_update">App Update!</string>
+    <string name="content_app_update">There is a new version of this app, would you like to update now?</string>
+    <string name="update_now">Update Now</string>
+    <string name="update_later">Update Later</string>
+    <string name="download_new_version">Downloading the new version...</string>
+    <string name="logout_tips">Are you sure to logout?</string>
+    <string name="confirm">Confirm</string>
+    <string name="cancel">Cancel</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    //*********************** 业务使用***************************
+</resources>

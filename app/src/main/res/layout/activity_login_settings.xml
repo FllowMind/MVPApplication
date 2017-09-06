@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginLeft="@dimen/margin_lr"
+    android:layout_marginRight="@dimen/margin_lr"
+    android:orientation="vertical">
+
+    <!--<include layout="@layout/title_bar_back_function" />-->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_lr"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tv_loginsettings_server_address"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/server_address" />
+
+        <Spinner
+            android:id="@+id/sp_server_addresses"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:entries="@array/server_addresses" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_lr"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tv_loginsettings_language"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/app_language" />
+
+        <Spinner
+            android:id="@+id/sp_language"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:entries="@array/app_languages" />
+    </LinearLayout>
+
+    <CheckBox
+        android:id="@+id/remmber_me"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_lr"
+        android:text="@string/remember_me" />
+
+    <Button
+        android:id="@+id/btn_save"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_lr"
+        android:text="@string/save" />
+
+</LinearLayout>

@@ -1,0 +1,27 @@
+<resources>
+
+    <!-- Android standard ICS color -->
+    <color name="orange">#ffEf4f1f</color>
+    <color name="red">#ff0000</color>
+    <color name="system_gray_green">#4b4d58</color>
+    <color name="white">#ffffff</color>
+    <color name="light_white">#fdf7f7</color>
+    <color name="black">#000</color>
+    <color name="transparent">#00000000</color>
+    <color name="titlebarColor">#212121</color>
+    <color name="nav_title_color">#616161</color>
+    <color name="line_gray">#b1abab</color>
+    <color name="load_info_color">#626262</color>
+    <color name="special">#d97828</color>
+    <color name="cycle_color">#bdbdbd</color>
+    <color name="ok_color">#e25688</color>
+    <color name="deep_gray">#009688</color>
+    <color name="light_gray">#d0d0d0</color>
+    <color name="light_gray2">#c6c1c1</color>
+    <color name="window_background">#303030</color>
+    <color name="green">#009966</color>
+    <color name="light_red">#cd6632</color>
+    <color name="amber">#ffc107</color>
+    <color name="light_green">#00bcd4</color>
+
+</resources>

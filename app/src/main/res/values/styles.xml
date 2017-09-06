@@ -1,0 +1,21 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light">
+        <!-- Customize your theme here. -->
+        <!--<item name="colorPrimary">@color/colorPrimary</item>-->
+        <!--<item name="colorPrimaryDark">@color/colorPrimaryDark</item>-->
+        <!--<item name="colorAccent">@color/colorAccent</item>-->
+    </style>
+
+    <style name="AppTheme.NoActionBar" parent="Theme.AppCompat.Light.NoActionBar"></style>
+
+    <color name="recovery_colorPrimary">#5677fc</color>
+    <color name="recovery_colorPrimaryDark">#5677fc</color>
+    <color name="recovery_colorAccent">#BDBDBD</color>
+    <color name="recovery_background">#ffffff</color>
+    <color name="recovery_textColor">#ffffff</color>
+    <color name="recovery_textColor_sub">#000</color>
+
+
+</resources>
