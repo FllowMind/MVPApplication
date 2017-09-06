@@ -8,3 +8,5 @@
 4.rxjava 2.x 异步处理
 5.Bufferknife view 注入
 6.登录和配置界面
+
+注意：使用框架之前建议把build.gradle 的 applicationId 修改一下，以免发生开发出相同ID应用的情况。
