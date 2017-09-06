@@ -13,7 +13,7 @@ import okhttp3.Response;
  * Created by 淋雨又调皮 on 2017/8/31.
  */
 
-public class LoggingInterceptor implements Interceptor {
+public class NetWorkInterceptor implements Interceptor {
     private final String TAG = "NetWork";
 
     @Override

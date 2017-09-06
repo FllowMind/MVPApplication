@@ -1,4 +1,4 @@
-package com.itran.mvpapplication.modules.modules_load.model;
+package com.itran.mvpapplication.modules.module_load.model;
 
 import com.itran.mvpapplication.beans.Result;
 import com.itran.mvpapplication.beans.Weather;
@@ -11,7 +11,7 @@ import retrofit2.http.Query;
  * Created by 淋雨又调皮 on 2017/8/30.
  */
 
-public interface WeatherService {
+public interface WeatherModel {
 
     @GET("json.shtml")
     Observable<Result<Weather>> getWeatherByCity(@Query("city") String city);

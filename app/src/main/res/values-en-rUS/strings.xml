@@ -36,6 +36,8 @@
     <string name="update_now">Update Now</string>
     <string name="update_later">Update Later</string>
     <string name="download_new_version">Downloading the new version...</string>
+    <string name="download_fail">Download Fail!</string>
+    <string name="refuse_permission">Refuse the permission will lead to the problem that app can not to be updated!</string>
     <string name="logout_tips">Are you sure to logout?</string>
     <string name="confirm">Confirm</string>
     <string name="cancel">Cancel</string>

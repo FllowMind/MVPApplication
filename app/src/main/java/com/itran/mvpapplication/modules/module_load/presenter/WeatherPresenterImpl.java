@@ -1,4 +1,4 @@
-package com.itran.mvpapplication.modules.modules_load.presenter;
+package com.itran.mvpapplication.modules.module_load.presenter;
 
 import android.util.Log;
 
@@ -6,8 +6,8 @@ import com.itran.mvpapplication.beans.Result;
 import com.itran.mvpapplication.beans.Weather;
 import com.itran.mvpapplication.common.MyObserver;
 import com.itran.mvpapplication.managers.APIServiceManager;
-import com.itran.mvpapplication.modules.modules_load.model.WeatherService;
-import com.itran.mvpapplication.modules.modules_load.view.WeatherView;
+import com.itran.mvpapplication.modules.module_load.model.WeatherModel;
+import com.itran.mvpapplication.modules.module_load.view.WeatherView;
 
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.schedulers.Schedulers;
@@ -27,7 +27,7 @@ public class WeatherPresenterImpl implements WeatherPresenter {
 
     @Override
     public void queryWeatherByCity(String city) {
-        APIServiceManager.createRetrofitServer(WeatherService.class)
+        APIServiceManager.createRetrofitServer(WeatherModel.class)
                 .getWeatherByCity(city)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())

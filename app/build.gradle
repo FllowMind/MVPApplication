@@ -45,9 +45,9 @@ dependencies {
     //弹框控件
     compile 'com.github.limxing:Android-PromptDialog:1.1.3'
     compile 'cn.pedant.sweetalert:library:1.3'
-
+    //酷炫进度条
     compile 'com.github.HotBitmapGG:RingProgressBar:V1.2.1'
-
+    //崩溃处理工具
     compile 'com.zxy.android:recovery:0.1.4'
 
 }

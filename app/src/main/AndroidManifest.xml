@@ -17,10 +17,10 @@
         android:theme="@style/AppTheme"
         tools:replace="android:icon">
 
-        <activity android:name=".modules.modules_load.view.WeatherActivity"></activity>
+        <activity android:name=".modules.module_load.view.WeatherActivity"></activity>
         <!--登录界面-->
         <activity
-            android:name=".modules.modules_login.view.LoginActivity"
+            android:name=".modules.module_login.view.LoginActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -31,7 +31,7 @@
 
         <!--配置界面-->
         <activity
-            android:name=".modules.modules_login.view.LoginSettingsActivity"
+            android:name=".modules.module_login.view.LoginSettingsActivity"
             android:label="@string/settings" />
 
     </application>

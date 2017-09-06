@@ -1,12 +1,12 @@
-package com.itran.mvpapplication.modules.modules_login.presenter;
+package com.itran.mvpapplication.modules.module_login.presenter;
 
 import com.itran.mvpapplication.R;
 import com.itran.mvpapplication.beans.Result;
 import com.itran.mvpapplication.beans.User;
 import com.itran.mvpapplication.common.MyObserver;
 import com.itran.mvpapplication.managers.APIServiceManager;
-import com.itran.mvpapplication.modules.modules_login.model.LoginService;
-import com.itran.mvpapplication.modules.modules_login.view.LoginView;
+import com.itran.mvpapplication.modules.module_login.model.LoginModel;
+import com.itran.mvpapplication.modules.module_login.view.LoginView;
 import com.itran.mvpapplication.utils.RUtil;
 
 import io.reactivex.android.schedulers.AndroidSchedulers;
@@ -26,7 +26,7 @@ public class LoginPresenterImpl implements LoginPresenter {
 
     @Override
     public void login(String userName, String password) {
-        APIServiceManager.createRetrofitServer(LoginService.class)
+        APIServiceManager.createRetrofitServer(LoginModel.class)
                 .login(userName, password)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())

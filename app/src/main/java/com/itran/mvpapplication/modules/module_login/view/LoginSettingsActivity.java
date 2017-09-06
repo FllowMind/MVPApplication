@@ -1,4 +1,4 @@
-package com.itran.mvpapplication.modules.modules_login.view;
+package com.itran.mvpapplication.modules.module_login.view;
 
 import android.content.Context;
 import android.content.Intent;

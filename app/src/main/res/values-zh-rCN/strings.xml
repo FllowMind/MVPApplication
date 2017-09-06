@@ -33,6 +33,8 @@
     <string name="update_now">马上更新</string>
     <string name="update_later">稍后更新</string>
     <string name="download_new_version">正在下载新版本...</string>
+    <string name="download_fail">下载失败！</string>
+    <string name="refuse_permission">拒绝读写文件权限将会导致应用无法更新！</string>
     <string name="logout_tips">您确定要退出应用？</string>
     <string name="confirm">确定</string>
     <string name="cancel">取消</string>

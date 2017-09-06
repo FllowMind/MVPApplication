@@ -1,7 +1,13 @@
-package com.itran.mvpapplication.modules.modules_login.view;
+package com.itran.mvpapplication.modules.module_login.view;
 
+import android.Manifest;
+import android.content.pm.PackageManager;
+import android.os.Build;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
@@ -11,8 +17,9 @@ import android.widget.ImageView;
 import com.itran.mvpapplication.R;
 import com.itran.mvpapplication.beans.User;
 import com.itran.mvpapplication.common.BaseActivity;
-import com.itran.mvpapplication.modules.modules_login.presenter.LoginPresenter;
-import com.itran.mvpapplication.modules.modules_login.presenter.LoginPresenterImpl;
+import com.itran.mvpapplication.managers.UpdateManager;
+import com.itran.mvpapplication.modules.module_login.presenter.LoginPresenter;
+import com.itran.mvpapplication.modules.module_login.presenter.LoginPresenterImpl;
 import com.itran.mvpapplication.utils.DialogUtil;
 
 import butterknife.BindView;
@@ -36,6 +43,7 @@ public class LoginActivity extends BaseActivity implements LoginView {
     @BindView(R.id.settingBtn)
     ImageView settingBtn;
     private LoginPresenter loginPresenter;
+    private UpdateManager updateManager;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -47,6 +55,21 @@ public class LoginActivity extends BaseActivity implements LoginView {
 
     private void init() {
         loginPresenter = new LoginPresenterImpl(this);
+        updateManager = new UpdateManager(this);
+        checkUpdate();
+    }
+
+    private void checkUpdate() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            if (ContextCompat.checkSelfPermission(LoginActivity.this, Manifest.permission.WRITE_EXTERNAL_STORAGE)
+                    != PackageManager.PERMISSION_GRANTED) {
+                ActivityCompat.requestPermissions(LoginActivity.this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, 1);
+            } else {
+                updateManager.checkUpdate();
+            }
+        } else {
+            updateManager.checkUpdate();
+        }
     }
 
 
@@ -97,5 +120,18 @@ public class LoginActivity extends BaseActivity implements LoginView {
         }
     }
 
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        switch (requestCode) {
+            case 1:
+                if (grantResults.length > 0 && grantResults[0] != PackageManager.PERMISSION_GRANTED) {
+                    DialogUtil.showWarningDialog(this, R.string.refuse_permission);
+                } else {
+                    updateManager.checkUpdate();
+                }
+                break;
 
+        }
+    }
 }

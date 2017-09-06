@@ -5,7 +5,7 @@ import android.app.Application;
 import com.itran.mvpapplication.common.CrashCallBack;
 import com.itran.mvpapplication.managers.ConfigManager;
 import com.itran.mvpapplication.managers.ContextManager;
-import com.itran.mvpapplication.modules.modules_load.view.WeatherActivity;
+import com.itran.mvpapplication.modules.module_load.view.WeatherActivity;
 import com.zxy.recovery.core.Recovery;
 
 /**

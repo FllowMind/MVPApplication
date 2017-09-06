@@ -1,7 +1,7 @@
 package com.itran.mvpapplication.managers;
 
 import com.itran.mvpapplication.beans.Config;
-import com.itran.mvpapplication.interceptors.LoggingInterceptor;
+import com.itran.mvpapplication.interceptors.NetWorkInterceptor;
 import com.jakewharton.retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 
 import okhttp3.OkHttpClient;
@@ -9,6 +9,7 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 /**
+ * Retrofit 的服务管理器
  * Created by 淋雨又调皮 on 2017/8/30.
  */
 
@@ -19,7 +20,7 @@ public class APIServiceManager {
 
     static {
         client = new OkHttpClient().newBuilder()
-                .addInterceptor(new LoggingInterceptor())//添加日志拦截器
+                .addInterceptor(new NetWorkInterceptor())//添加日志拦截器
                 .build();
         server_address = ConfigManager.getIns().getConfig(Config.SERVER_ADDRESS);//获取服务器地址
     }

@@ -1,4 +1,4 @@
-package com.itran.mvpapplication.modules.modules_load.view;
+package com.itran.mvpapplication.modules.module_load.view;
 
 import android.os.Bundle;
 import android.widget.Button;
@@ -8,8 +8,8 @@ import android.widget.TextView;
 import com.itran.mvpapplication.R;
 import com.itran.mvpapplication.beans.Weather;
 import com.itran.mvpapplication.common.BaseActivity;
-import com.itran.mvpapplication.modules.modules_load.presenter.WeatherPresenter;
-import com.itran.mvpapplication.modules.modules_load.presenter.WeatherPresenterImpl;
+import com.itran.mvpapplication.modules.module_load.presenter.WeatherPresenter;
+import com.itran.mvpapplication.modules.module_load.presenter.WeatherPresenterImpl;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -62,6 +62,5 @@ public class WeatherActivity extends BaseActivity implements WeatherView {
     public void onBackPressed() {
 //        super.onBackPressed();
 //        showLogoutDialog();
-        showUpdateDialog();
     }
 }

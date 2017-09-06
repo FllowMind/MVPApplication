@@ -1,21 +1,15 @@
 package com.itran.mvpapplication.common;
 
-import android.app.Dialog;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.widget.TextView;
 
 import com.itran.mvpapplication.R;
 import com.itran.mvpapplication.managers.ActivityManager;
 import com.itran.mvpapplication.utils.RUtil;
 
 import cn.pedant.SweetAlert.SweetAlertDialog;
-import io.netopen.hotbitmapgg.library.view.RingProgressBar;
 import me.leefeng.promptlibrary.PromptDialog;
 
 /**
@@ -170,42 +164,42 @@ public class BaseActivity extends AppCompatActivity {
         dialog.show();
     }
 
-    /**
-     * 退出提示框
-     */
-    public void showUpdateDialog() {
-        SweetAlertDialog dialog = new SweetAlertDialog(this, SweetAlertDialog.WARNING_TYPE);
-        dialog.setTitleText(RUtil.getString(R.string.title_app_update));
-        dialog.setContentText(RUtil.getString(R.string.content_app_update));
-        dialog.setCancelText(RUtil.getString(R.string.update_later));
-        dialog.setConfirmText(RUtil.getString(R.string.update_now));
-        dialog.setConfirmClickListener(new SweetAlertDialog.OnSweetClickListener() {
-            @Override
-            public void onClick(SweetAlertDialog sweetAlertDialog) {
-                sweetAlertDialog.dismiss();
-                showDownLoadDialog();
-            }
-        });
-        dialog.show();
-    }
-
-    public void showDownLoadDialog() {
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        View view = LayoutInflater.from(this).inflate(R.layout.dialog_download, null);
-        final RingProgressBar progress = view.findViewById(R.id.progress);
-        final TextView download = view.findViewById(R.id.download);
-        download.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                progress.setProgress(50);
-            }
-        });
-        builder.setView(view);
-
-        final Dialog dialog = builder.create();
-        dialog.show();
-
-    }
+//    /**
+//     * 退出提示框
+//     */
+//    public void showUpdateDialog() {
+//        SweetAlertDialog dialog = new SweetAlertDialog(this, SweetAlertDialog.WARNING_TYPE);
+//        dialog.setTitleText(RUtil.getString(R.string.title_app_update));
+//        dialog.setContentText(RUtil.getString(R.string.content_app_update));
+//        dialog.setCancelText(RUtil.getString(R.string.update_later));
+//        dialog.setConfirmText(RUtil.getString(R.string.update_now));
+//        dialog.setConfirmClickListener(new SweetAlertDialog.OnSweetClickListener() {
+//            @Override
+//            public void onClick(SweetAlertDialog sweetAlertDialog) {
+//                sweetAlertDialog.dismiss();
+//                showDownLoadDialog();
+//            }
+//        });
+//        dialog.show();
+//    }
+//
+//    public void showDownLoadDialog() {
+//        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+//        View view = LayoutInflater.from(this).inflate(R.layout.dialog_download, null);
+//        final RingProgressBar progress = view.findViewById(R.id.progress);
+//        final TextView download = view.findViewById(R.id.download);
+//        download.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                progress.setProgress(50);
+//            }
+//        });
+//        builder.setView(view);
+//
+//        final Dialog dialog = builder.create();
+//        dialog.show();
+//
+//    }
 
 
     /**
