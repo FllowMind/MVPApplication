@@ -13,6 +13,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.itran.mvpapplication.R;
 import com.itran.mvpapplication.beans.User;
@@ -42,6 +43,8 @@ public class LoginActivity extends BaseActivity implements LoginView {
     Button btnClear;
     @BindView(R.id.settingBtn)
     ImageView settingBtn;
+    @BindView(R.id.versionTv)
+    TextView versionTv;
     private LoginPresenter loginPresenter;
     private UpdateManager updateManager;
 
@@ -56,7 +59,20 @@ public class LoginActivity extends BaseActivity implements LoginView {
     private void init() {
         loginPresenter = new LoginPresenterImpl(this);
         updateManager = new UpdateManager(this);
+        initVersion();
         checkUpdate();
+    }
+
+    /**
+     * 初始化版本号
+     */
+    private void initVersion() {
+        try {
+            String versionName = getPackageManager().getPackageInfo("com.itran.mvpapplication", 0).versionName;
+            versionTv.setText(versionName);
+        } catch (PackageManager.NameNotFoundException e) {
+            e.printStackTrace();
+        }
     }
 
     private void checkUpdate() {
