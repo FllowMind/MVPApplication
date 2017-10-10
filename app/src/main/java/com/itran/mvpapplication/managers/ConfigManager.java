@@ -3,9 +3,10 @@ package com.itran.mvpapplication.managers;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
+import android.text.TextUtils;
 
 import com.itran.mvpapplication.R;
-import com.itran.mvpapplication.beans.Config;
+import com.itran.mvpapplication.entity.Config;
 import com.itran.mvpapplication.utils.RUtil;
 
 import java.util.HashMap;
@@ -59,11 +60,15 @@ public class ConfigManager {
      * @return
      */
     public String getConfig(Config key) {
-        return config.get(key);
+        String conf = config.get(key);
+        if(TextUtils.isEmpty(conf)){
+            conf = getFromLocal(key,"");
+        }
+        return conf;
     }
 
     /**
-     * 添加配置
+     * 添加配置到内存
      *
      * @param key
      * @param value
@@ -73,7 +78,7 @@ public class ConfigManager {
     }
 
     /**
-     * 添加配置
+     * 添加配置到内存和本地存储
      *
      * @param key
      * @param value

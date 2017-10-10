@@ -1,4 +1,4 @@
-package com.itran.mvpapplication.beans;
+package com.itran.mvpapplication.entity;
 
 /**
  * 配置枚举类
@@ -18,7 +18,19 @@ public enum Config {
     /**
      * 是否记住账号信息
      */
-    REMEMBER_ME("remember_me");
+    REMEMBER_ME("remember_me"),
+    /**
+     * 消息提醒模式
+     */
+    TIPS_MODE("APP_TIPS_MODE"),
+    /**
+     * 登录用户名
+     */
+    USER_NAME("userName"),
+    /**
+     * 登录用户名
+     */
+    PASSWORD("password");
 
     private String value;
 

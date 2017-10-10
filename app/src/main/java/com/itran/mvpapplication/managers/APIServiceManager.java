@@ -1,12 +1,12 @@
 package com.itran.mvpapplication.managers;
 
-import com.itran.mvpapplication.beans.Config;
+import com.itran.mvpapplication.common.JsonConverterFactory;
+import com.itran.mvpapplication.entity.Config;
 import com.itran.mvpapplication.interceptors.NetWorkInterceptor;
 import com.jakewharton.retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 
 import okhttp3.OkHttpClient;
 import retrofit2.Retrofit;
-import retrofit2.converter.gson.GsonConverterFactory;
 
 /**
  * Retrofit 的服务管理器
@@ -37,7 +37,7 @@ public class APIServiceManager {
                 .baseUrl(server_address)
                 .client(client)
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
-                .addConverterFactory(GsonConverterFactory.create())
+                .addConverterFactory(JsonConverterFactory.create())
                 .build();
         return retrofit.create(classz);
     }

@@ -1,4 +1,4 @@
-package com.itran.mvpapplication.beans;
+package com.itran.mvpapplication.entity;
 
 /**
  * app 信息实体类

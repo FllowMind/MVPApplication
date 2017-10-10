@@ -1,6 +1,6 @@
 package com.itran.mvpapplication.managers;
 
-import android.support.v7.app.AppCompatActivity;
+import android.app.Activity;
 
 import java.util.Stack;
 
@@ -11,7 +11,7 @@ import java.util.Stack;
 public class ActivityManager {
 
     private static ActivityManager mManager;
-    private Stack<AppCompatActivity> mStack;
+    private Stack<Activity> mStack;
 
     public ActivityManager() {
         mStack = new Stack<>();
@@ -43,7 +43,7 @@ public class ActivityManager {
      *
      * @param activity
      */
-    public void pushToTask(AppCompatActivity activity) {
+    public void pushToTask(Activity activity) {
         mStack.push(activity);
     }
 
@@ -52,7 +52,7 @@ public class ActivityManager {
      */
     public void popAll() {
         while (!mStack.empty()) {
-            AppCompatActivity activity = mStack.pop();
+            Activity activity = mStack.pop();
             activity.finish();
         }
     }
@@ -62,7 +62,7 @@ public class ActivityManager {
      *
      * @return
      */
-    public AppCompatActivity getTopActivity() {
+    public Activity getTopActivity() {
         if (!mStack.empty()) {
             return mStack.peek();
         }

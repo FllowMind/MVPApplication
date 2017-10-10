@@ -31,4 +31,13 @@ public class VibratorUtil {
         }
     }
 
+    /**
+     * 取消震动
+     */
+    public static void stopVibraort(){
+        if(vibrator!=null){
+            vibrator.cancel();
+        }
+    }
+
 }

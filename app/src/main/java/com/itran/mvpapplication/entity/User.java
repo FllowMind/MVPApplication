@@ -1,4 +1,4 @@
-package com.itran.mvpapplication.beans;
+package com.itran.mvpapplication.entity;
 
 /**
  * Created by 淋雨又调皮 on 2017/9/4.

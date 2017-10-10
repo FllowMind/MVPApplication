@@ -57,7 +57,12 @@ public class RUtil {
 		String[] result = res.getStringArray(id);
 		return result;
 	}
-	
+	public static String[] getStringArray(int id){
+		Resources res = ContextManager.getContext().getResources();
+		String[] result = res.getStringArray(id);
+		return result;
+	}
+
 	public static int getResourceId(Context context, String key, String type){
 		Resources res = context.getResources();
 		int id = res.getIdentifier(key, type, context.getPackageName());

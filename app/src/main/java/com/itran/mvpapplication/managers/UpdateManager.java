@@ -17,9 +17,8 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.itran.mvpapplication.R;
-import com.itran.mvpapplication.beans.AppInfo;
-import com.itran.mvpapplication.beans.Config;
-import com.itran.mvpapplication.beans.Result;
+import com.itran.mvpapplication.entity.Config;
+import com.itran.mvpapplication.entity.Result;
 import com.itran.mvpapplication.common.MyObserver;
 import com.itran.mvpapplication.utils.DialogUtil;
 import com.itran.mvpapplication.utils.RUtil;
@@ -100,6 +99,7 @@ public class UpdateManager {
             OkHttpClient client = new OkHttpClient();
             Request request = new Request.Builder()
                     .url(downloadUrl)
+                    .addHeader("Accept-Encoding", "identity")
                     .build();
 
             try {
@@ -114,7 +114,7 @@ public class UpdateManager {
                     int total = 0;
                     int len = 0;
                     while ((len = is.read(b)) != -1) {
-                        if (!cancelUpdate) {
+                        if (cancelUpdate) {
                             return false;
                         } else {
                             total += len;
@@ -165,14 +165,14 @@ public class UpdateManager {
                 .getAppInfo()
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(new MyObserver<Result<AppInfo>>() {
+                .subscribe(new MyObserver<Result>() {
                     @Override
-                    public void onSuccess(Result<AppInfo> value) {
-                        AppInfo appInfo = value.getData();
-                        int currentVersion = getVersionCode();
-                        if (currentVersion < appInfo.getAppVersion()) {
-                            showUpdateDialog();
-                        }
+                    public void onSuccess(Result value) {
+//                        AppInfo appInfo = value.getData();
+//                        int currentVersion = getVersionCode();
+//                        if (currentVersion < appInfo.getAppVersion()) {
+//                            showUpdateDialog();
+//                        }
                     }
 
                     @Override
@@ -216,7 +216,6 @@ public class UpdateManager {
                     @Override
                     public void onClick(View view) {
                         mDownloadDialog.dismiss();
-                        mDownloadDialog.dismiss();
                         // 设置取消状态
                         cancelUpdate = true;
                     }
@@ -248,7 +247,7 @@ public class UpdateManager {
      * 安装app
      */
     private void installAPK() {
-        File apkfile = new File(mSavePath, apkName);
+        File apkfile = new File(mSavePath);
         if (!apkfile.exists()) {
             return;
         }
@@ -281,7 +280,7 @@ public class UpdateManager {
      */
     interface UpdateModel {
         @GET("getAppInfo")
-        Observable<Result<AppInfo>> getAppInfo();
+        Observable<Result> getAppInfo();
     }
 
 }
