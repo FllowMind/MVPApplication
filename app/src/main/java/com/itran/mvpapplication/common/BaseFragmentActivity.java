@@ -2,7 +2,7 @@ package com.itran.mvpapplication.common;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
+import android.support.v4.app.FragmentActivity;
 
 import com.itran.mvpapplication.R;
 import com.itran.mvpapplication.common.widget.CustomProgressDialog;
@@ -12,11 +12,10 @@ import com.itran.mvpapplication.utils.RUtil;
 import cn.pedant.SweetAlert.SweetAlertDialog;
 
 /**
- * Created by 淋雨又调皮 on 2017/7/10.
+ * Created by 淋雨又调皮 on 2017/9/29.
  */
 
-public class BaseActivity extends AppCompatActivity {
-
+public class BaseFragmentActivity extends FragmentActivity {
 
     private final String TAG = getClass().getName();
     private CustomProgressDialog progressDialog;
@@ -121,4 +120,5 @@ public class BaseActivity extends AppCompatActivity {
             progressDialog.dismiss();
         }
     }
+
 }

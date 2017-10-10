@@ -8,7 +8,7 @@ import android.util.Log;
  */
 
 public class LogUtil {
-    private static final int current_log_level = 3;//当前日志级别
+    private static final int current_log_level = 6;//当前日志级别
     private static final int verbose_log = 1;
     private static final int debug_log = 2;
     private static final int info_log = 3;

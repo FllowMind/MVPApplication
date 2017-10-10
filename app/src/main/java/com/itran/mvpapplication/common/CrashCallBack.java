@@ -2,6 +2,7 @@ package com.itran.mvpapplication.common;
 
 import android.util.Log;
 
+import com.itran.mvpapplication.utils.LogUtil;
 import com.zxy.recovery.callback.RecoveryCallback;
 
 /**
@@ -12,7 +13,7 @@ import com.zxy.recovery.callback.RecoveryCallback;
 public class CrashCallBack implements RecoveryCallback {
     @Override
     public void stackTrace(String stackTrace) {
-        Log.i("crash", "stackTrace:" + stackTrace);
+        LogUtil.i("crash", "stackTrace:" + stackTrace);
 
     }
 
@@ -23,12 +24,12 @@ public class CrashCallBack implements RecoveryCallback {
 
     @Override
     public void exception(String throwExceptionType, String throwClassName, String throwMethodName, int throwLineNumber) {
-        Log.i("crash", String.format("throwExceptionType: %s/%n throwClassName: %s%n throwMethodName: " +
+        LogUtil.e("crash", String.format("throwExceptionType: %s/%n throwClassName: %s%n throwMethodName: " +
                 "%s%n throwLineNumber: %s", throwExceptionType, throwClassName, throwMethodName, throwLineNumber));
     }
 
     @Override
     public void throwable(Throwable throwable) {
-        Log.i("crash", "throwable:" + throwable.getMessage());
+        LogUtil.e("crash", "throwable:" + throwable.getMessage());
     }
 }

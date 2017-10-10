@@ -19,7 +19,7 @@ import android.widget.TextView;
 import com.itran.mvpapplication.R;
 import com.itran.mvpapplication.entity.Config;
 import com.itran.mvpapplication.entity.Result;
-import com.itran.mvpapplication.common.MyObserver;
+import com.itran.mvpapplication.common.CommonObserver;
 import com.itran.mvpapplication.utils.DialogUtil;
 import com.itran.mvpapplication.utils.RUtil;
 
@@ -165,7 +165,7 @@ public class UpdateManager {
                 .getAppInfo()
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(new MyObserver<Result>() {
+                .subscribe(new CommonObserver<Result>() {
                     @Override
                     public void onSuccess(Result value) {
 //                        AppInfo appInfo = value.getData();

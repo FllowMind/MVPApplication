@@ -1,8 +1,7 @@
 package com.itran.mvpapplication.common;
 
-import android.util.Log;
-
 import com.itran.mvpapplication.managers.ActivityManager;
+import com.itran.mvpapplication.utils.LogUtil;
 
 import io.reactivex.Observer;
 import io.reactivex.disposables.Disposable;
@@ -11,7 +10,7 @@ import io.reactivex.disposables.Disposable;
  * Created by 淋雨又调皮 on 2017/8/31.
  */
 
-public abstract class MyObserver<T> implements Observer<T> {
+public abstract class CommonObserver<T> implements Observer<T> {
 
     private final String TAG = "NetWork";
 
@@ -23,14 +22,14 @@ public abstract class MyObserver<T> implements Observer<T> {
     @Override
     public void onNext(T value) {
         onSuccess(value);
-        Log.i(TAG, "success");
+        LogUtil.i(TAG,"请求成功");
     }
 
     @Override
     public void onError(Throwable e) {
         onFailure(e);
         dismissDialog();//关闭加载框
-        Log.e(TAG, e.getMessage());
+        LogUtil.e(TAG,"请求失败",e);
     }
 
     @Override
@@ -43,9 +42,10 @@ public abstract class MyObserver<T> implements Observer<T> {
     public abstract void onFailure(Throwable e);
 
     public void dismissDialog() {
-        BaseActivity activity = (BaseActivity) ActivityManager.getIns().getTopActivity();
-        if (activity != null) {
-            activity.dialogDismiss();
+        if(ActivityManager.getIns().getTopActivity() instanceof BaseActivity){
+            ((BaseActivity) ActivityManager.getIns().getTopActivity()).dialogDismiss();
+        }else {
+            ((BaseFragmentActivity) ActivityManager.getIns().getTopActivity()).dialogDismiss();
         }
     }
 
